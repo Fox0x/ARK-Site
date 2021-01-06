@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="MyCtrl">
+<head>
+    <meta charset="UTF-8">
+    <!--AngularJS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!--Angular Material-->
+    <link href="https://gitcdn.xyz/cdn/angular/bower-material/v1.2.2/angular-material.css" rel="stylesheet">
+    <script src="https://material.angularjs.org/1.2.2/docs.css"></script>
+    <!-- AngularJS Material JS -->
+    <script src="https://gitcdn.xyz/cdn/angular/bower-material/v1.2.2/angular-material.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-aria.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+    <!--Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Main CSS file -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!--Main JS file-->
+    <script src="js/index.js"></script>
+
+
+    <title>ARK_FOX</title>
+</head>
+<!--End of *HEAD*-->
+
+<header>
+    <div id="header">
+        <div class="container" id="headerButtonsContainer">
+            <mdcontent>
+                <section>
+                    <md-button class="md-primary header-buttons" ng-click="">
+                        <md-icon class="header-button-icons" md-font-set="material-icons">assessment</md-icon>
+                        DINO STATS
+                    </md-button>
+
+                    <md-button class="md-primary header-buttons" ng-click="">
+                        <md-icon class="header-button-icons" md-font-set="material-icons">backup_table</md-icon>
+                        DODODEX
+                    </md-button>
+
+                    <md-button class="md-primary header-buttons" ng-click="">
+                        <md-icon class="header-button-icons" md-font-set="material-icons">explore</md-icon>
+                        RESOURCES MAP
+                    </md-button>
+                </section>
+            </mdcontent>
+        </div>
+    </div>
+</header>
+<!--End of *HEADER*-->
+<body>
+<div id="body">
+    <div class="container" id="tableOfStatsContainer">
+        <table id="tableOfStats">
+            <tr>
+                <th>NAME</th>
+                <th>HEALTH</th>
+                <th>STAMINA</th>
+                <th>FOOD</th>
+                <th>WEIGHT</th>
+                <th>DAMAGE</th>
+                <th>LVL</th>
+                <th>GENDER</th>
+                <th>SADDLE</th>
+            </tr>
+            <tr ng-repeat="d in dinos">
+                <th><a href="https://www.dododex.com/taming/{{d.name}}">{{d.name}}</a></th>
+                <th><input ng-model="$scope.dinos.health" type="text" placeholder="{{d.health}}"></th>
+                <th><input type="text" placeholder="{{d.stamina}}"></th>
+                <th><input type="text" placeholder="{{d.food}}"></th>
+                <th><input type="text" placeholder="{{d.weight}}"></th>
+                <th><input type="text" placeholder="{{d.damage}}"></th>
+                <th><input type="text" placeholder="{{d.lvl}}"></th>
+                <th>{{d.gender}}</th>
+                <th>{{d.saddleLvl}}</th>
+            </tr>
+
+        </table>
+    </div>
+</div>
+</body>
+<!--End of *BODY*-->
+<footer>
+    <div id="footer">
+
+    </div>
+</footer>
+<!--End of *FOOTER*-->
+</html>
